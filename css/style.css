@@ -1,0 +1,103 @@
+/* Hide the template */
+#calculator-template {
+    display: none;
+}
+
+/* Main styling */
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #202855;
+}
+
+.calculator-container {
+    background-color: #E0EAF8;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.display {
+    background-color: #121426;
+    padding: 15px;
+    text-align: right;
+    font-size: 1.8em;
+    flex: 0 0 auto;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    color: #E0EAF8;
+    font-family: 'Lucida Console', monospace;
+}
+
+.upper-display {
+    font-size: .8em;
+    margin-bottom: 5px;
+    flex: 1 0 auto;
+    min-height: 30px;
+}
+
+.lower-display {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    flex: 1 0 auto;
+    min-height: 50px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    flex: 1 0 auto;
+}
+
+.buttons-main,
+.buttons-operators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.buttons-main button {
+    flex: 1 0 calc(33.33% - 10px);
+}
+
+.buttons-operators button {
+    flex: 1 0 calc(25% - 10px);
+}
+
+.equals,
+.delete {
+    flex: 1 0 calc(50% - 10px);
+}
+
+button {
+    background-color: #3CF0F7;
+    border: none;
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .2s;
+    color: #121426;
+}
+
+.clear,
+.delete,
+.equals,
+.operator {
+    background-color: #F23071;
+    color: #E0EAF8;
+}
+
+button:hover {
+    background-color: #202855;
+    color: #E0EAF8;
+}
