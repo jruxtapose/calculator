@@ -4,7 +4,6 @@ A simple* JavaScript calculator.
 ## Features
 
 *   Basic arithmetic operations (addition, subtraction, multiplication, division)
-*   [Add any other special features here, e.g., decimal support, keyboard input]
 
 ## Technologies Used
 
