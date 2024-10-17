@@ -220,7 +220,7 @@ function createCalculator(){
                     if(calculator.firstOperand !=='' && calculator.operator!=='' && calculator.secondOperand!=='' && calculator.lowerDisplay.textContent!==''){
                         calculator.clear();
                     }
-                    // Ignores decimal presses if a decimal already exists
+                    // Ignores decimal presses if a decimal already exists, or if entry is null
                     if (e.target.textContent === '.' && (calculator.lowerDisplay.textContent.includes('.') || calculator.lowerDisplay.textContent === '')) {
                         break;
                     } else {
