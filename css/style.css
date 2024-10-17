@@ -61,7 +61,8 @@ body{
 }
 
 .buttons-main,
-.buttons-operators {
+.buttons-operators,
+.buttons-memory {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -78,6 +79,13 @@ body{
 .equals,
 .delete {
     flex: 1 0 calc(50% - 10px);
+}
+
+.mem-add,
+.mem-recall,
+.mem-clear {
+    flex: 1 0 calc(33% - 10px);
+    background-color: aquamarine;
 }
 
 button {
