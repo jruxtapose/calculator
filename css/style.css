@@ -11,6 +11,8 @@ body{
     align-items: center;
     min-height: 100vh;
     background-color: #202855;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .calculator-container {
