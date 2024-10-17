@@ -28,12 +28,12 @@ To view and use the calculator, visit
 1.  Enter the first number using the calculator buttons.
 2.  Select the desired operator (+, -, *, /).
 3.  Enter the second number.
-4.  Press the "=" button to see the result.
-5.  [Add any special usage instructions here]
+4.  Press the "=" or another operator button to see the result.
 
 ## Screenshots
 
-[Include a screenshot or GIF of your calculator in action here]
+![Single Calculator](images/screenshots/Screenshot%202024-10-16%20212119.png)
+![Double Calculator!](images/screenshots/Screenshot%202024-10-16%20212141.png)
 
 ## Credits
 
