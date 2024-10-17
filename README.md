@@ -6,7 +6,7 @@ A simple* JavaScript calculator.
 *   Basic arithmetic operations (addition, subtraction, multiplication, division)
 *   Refuse to continue operations that contain errors.
 *   Operator persistance, when equals is pressed repeadedly, runs the previous operation with the second operand repeatedly. IE 2 + 3 + 3 + 3
-*   Bonus, open the terminal and type createCalculator(). All rendered calculators have their own logic and operate independently.
+*   Easter Egg, open the terminal and type createCalculator(). All rendered calculators have their own logic and operate independently.
 
 ## Future Features
 
