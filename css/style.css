@@ -72,7 +72,7 @@ body{
 }
 
 .buttons-operators button {
-    flex: 1 0 calc(25% - 10px);
+    flex: 1 0 calc(20% - 10px);
 }
 
 .equals,
