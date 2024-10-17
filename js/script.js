@@ -26,6 +26,13 @@ const operations = {
     subtract(num1, num2){
         return num1 - num2;
     },
+    modulo(num1, num2){
+        if(num2 === 0){
+            return "divByZero"
+        }else{
+            return num1 % num2
+        }
+    }
 }
 
 // Created the calculator class for ease of expansion and the potential for multiple independant calculators on one screen.
@@ -43,6 +50,7 @@ class Calculator {
             ['/', operations.divide],
             ['+', operations.add],
             ['-', operations.subtract],
+            ['%', operations.modulo],
         ]);
     }
 
