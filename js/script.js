@@ -1,6 +1,10 @@
+// Initialize the calculator count, part of my calculator ID generation
 let calculatorCreationCount = 0;
+
+// Stores the HTML from index.html (hidden by CSS) in a variable for later use.
 const calculatorTemplate = document.querySelector('#calculator-template')
 
+// Stores calculation operations inside an object for later use.
 const operations = {
     multiply(num1, num2){
         if(num1 === '' || num2 === ''){
@@ -24,6 +28,7 @@ const operations = {
     },
 }
 
+// Created the calculator class for ease of expansion and the potential for multiple independant calculators on one screen.
 class Calculator {
     constructor(container) {
         this.firstOperand = '';
