@@ -7,11 +7,12 @@ A simple* JavaScript calculator.
 *   Refuse to continue operations that contain errors.
 *   Operator persistance, when equals is pressed repeadedly, runs the previous operation with the second operand repeatedly. IE 2 + 3 + 3 + 3
 *   Easter Egg, open the terminal and type createCalculator(). All rendered calculators have their own logic and operate independently.
+*   Memory add, recall, and clear feature. Saves the current entry into a variable. Memoray can be recalled and modified later, or cleared. Operates seperately from calculator clear function, so that you may save a value, clear your calculator, and reuse it. Currently no indicator, future plan.
 
 ## Future Features
 
 *   Keyboard support.
-*   Mem+ function.
+*   Mem+ indicator.
 
 ## Technologies Used
 

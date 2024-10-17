@@ -44,6 +44,7 @@ class Calculator {
         this.container = container;
         this.upperDisplay = this.container.querySelector('.upper-display');
         this.lowerDisplay = this.container.querySelector('.lower-display');
+        this.memorySlot = '';
 
         this.operateFunction = new Map([
             ['*', operations.multiply],
@@ -123,6 +124,7 @@ function createCalculator(){
     newCalculator.addEventListener('click', function (e) {
         // Filter out click within the calculator that aren't on buttons.
         if (e.target.tagName === 'BUTTON') {
+            console.log(e.target.tagName)
             // Assign a variable to the calculatorInstance to ease accessing of it's contents.
             const calculator = this.calculatorInstance;
             switch(e.target.className) {
@@ -222,6 +224,31 @@ function createCalculator(){
                         calculator.updateUpperDisplay();
                         calculator.clearLowerDisplay(); 
                     } 
+                    break;
+                
+                case 'memory':
+                    // Add value to memory slot
+                    if(e.target.textContent === 'M+') {
+                        if(calculator.lowerDisplay !== ''){
+                            calculator.memorySlot = calculator.lowerDisplay.textContent;
+                        }else{
+                            break;
+                        }
+
+                    // Recall value from memory slot
+                    }else if(e.target.textContent === 'MR') {
+                        if(calculator.memorySlot !== ''){
+                            calculator.lowerDisplay.textContent = calculator.memorySlot;
+                        }else{
+                            break;
+                        }
+                    }else if(e.target.textContent === 'MC') {
+                        if(calculator.memorySlot !== ''){
+                            calculator.memorySlot = '';
+                        }else{
+                            break;
+                        }
+                    }
                     break;
                 default:
                     // If typing over an already completed function, clears the operators and starts a new entry
