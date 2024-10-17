@@ -130,36 +130,41 @@ function createCalculator(){
                     };
                     break;
                 case 'equals':
+
                     // Refuse equals press if error displayed on screen
                     if(calculator.lowerDisplay.textContent === 'NaN' || calculator.lowerDisplay.textContent === 'divByZero' || calculator.lowerDisplay.textContent === 'null'){
                         break;
+
                     // Equals pressed before any other entries, display 0
                     }else if (calculator.firstOperand === '' && calculator.operator === '' && calculator.lowerDisplay.textContent === ''){
                         calculator.upperDisplay.textContent = 0;
-                        console.log('Equals pressed before any other entries, display 0')
+                        calculator.clearLowerDisplay();
+
                     // Equals pressed after first entry, display current entry as answer (a = a)
                     }else if(calculator.firstOperand === '' && calculator.operator === '' && calculator.lowerDisplay.textContent !== ''){
                         calculator.upperDisplay.textContent = calculator.lowerDisplay.textContent;
-                        console.log('Equals pressed after first entry, display current entry as answer (a = a)')
+                        calculator.clearLowerDisplay(); 
+
                     // Equals pressed after a first operand, an operator, and a second operand
                     }else if(calculator.firstOperand !== '' && calculator.operator !== '' && calculator.lowerDisplay.textContent !== '' && calculator.secondOperand === ''){
                         calculator.secondOperand = calculator.lowerDisplay.textContent;
                         calculator.updateUpperDisplay();
                         calculator.lowerDisplay.textContent = calculator.calculate();
-                        console.log('Equals pressed after a first operand, an operator, and a second operator')
+
                     // Equals pressed again immediate after completing an operation
                     }else if(calculator.firstOperand !=='' && calculator.operator !== '' && calculator.secondOperand !== ''){
                         calculator.firstOperand = calculator.lowerDisplay.textContent;
                         calculator.secondOperand = calculator.secondOperand;
                         calculator.lowerDisplay.textContent = calculator.calculate();
                         calculator.updateUpperDisplay();
-                        console.log('Equals pressed again immediate after completing an operation')
                     }
                     break;
                 case 'operator':
+
                     // Refuse operator press if error displayed on screen                      
                     if(calculator.lowerDisplay.textContent === 'NaN' || calculator.lowerDisplay.textContent === 'divByZero' || calculator.lowerDisplay.textContent === 'null'){
                         break;
+
                     // Operator pressed before entering an operand, treat firstOperand as 0.
                     }else if (calculator.firstOperand === '' && calculator.lowerDisplay.textContent === '') {
                         calculator.firstOperand = 0;
@@ -195,6 +200,7 @@ function createCalculator(){
                         // Clear the lower display to prepare for a new entry and update upperDisplay
                         calculator.clearLowerDisplay();
                         calculator.updateUpperDisplay();
+
                     // Operator pressed after another operation completed by pressing equals.
                     }else if(calculator.firstOperand !== '' && calculator.secondOperand !== '' && calculator.operator !== '' && calculator.lowerDisplay.textContent !== ''){
                         calculator.firstOperand = calculator.lowerDisplay.textContent;
@@ -205,9 +211,11 @@ function createCalculator(){
                     } 
                     break;
                 default:
+                    // If typing over an already completed function, clears the operators and starts a new entry
                     if(calculator.firstOperand !=='' && calculator.operator!=='' && calculator.secondOperand!=='' && calculator.lowerDisplay.textContent!==''){
                         calculator.clear();
                     }
+                    // Ignores decimal presses if a decimal already exists
                     if (e.target.textContent === '.' && calculator.lowerDisplay.textContent.includes('.')) {
                         break;
                     } else {
