@@ -83,7 +83,6 @@ body{
 
 .memory {
     flex: 1 0 calc(33% - 10px);
-    background-color: aquamarine;
 }
 
 button {
@@ -103,6 +102,11 @@ button {
 .operator {
     background-color: #F23071;
     color: #E0EAF8;
+}
+
+.memory {
+    background-color: aquamarine;
+    color: #121426;
 }
 
 button:hover {
