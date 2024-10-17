@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Calc-Ya-Later, Alligator",
+  "short_name": "Calc",
   "icons": [
     {
       "src": "/images/web-app-manifest-192x192.png",
