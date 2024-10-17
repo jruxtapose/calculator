@@ -141,7 +141,6 @@ function createCalculator(){
     newCalculator.addEventListener('click', function (e) {
         // Filter out click within the calculator that aren't on buttons.
         if (e.target.tagName === 'BUTTON') {
-            console.log(e.target.tagName)
             // Assign a variable to the calculatorInstance to ease accessing of it's contents.
             const calculator = this.calculatorInstance;
             switch(e.target.className) {
