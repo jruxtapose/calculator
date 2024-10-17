@@ -221,7 +221,7 @@ function createCalculator(){
                         calculator.clear();
                     }
                     // Ignores decimal presses if a decimal already exists
-                    if (e.target.textContent === '.' && calculator.lowerDisplay.textContent.includes('.')) {
+                    if (e.target.textContent === '.' && (calculator.lowerDisplay.textContent.includes('.') || calculator.lowerDisplay.textContent === '')) {
                         break;
                     } else {
                         calculator.lowerDisplay.textContent += e.target.textContent;
