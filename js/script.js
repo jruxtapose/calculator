@@ -95,6 +95,23 @@ class Calculator {
         this.lowerDisplay.textContent = '';
     }
 
+    memoryAdd(){
+        if(this.lowerDisplay !== ''){
+            this.memorySlot = this.lowerDisplay.textContent;
+        }
+    }
+
+    memoryClear(){
+        if(this.memorySlot !== ''){
+            this.memorySlot = '';
+        }
+    }
+    memoryRecall(){
+        if(this.memorySlot !== ''){
+            this.lowerDisplay.textContent = this.memorySlot;
+        }
+    }
+
     updateUpperDisplay() {
         this.upperDisplay.textContent = `${this.firstOperand} ${this.operator} ${this.secondOperand}`;
     }
@@ -229,25 +246,15 @@ function createCalculator(){
                 case 'memory':
                     // Add value to memory slot
                     if(e.target.textContent === 'M+') {
-                        if(calculator.lowerDisplay !== ''){
-                            calculator.memorySlot = calculator.lowerDisplay.textContent;
-                        }else{
-                            break;
-                        }
+                        calculator.memoryAdd();
 
                     // Recall value from memory slot
                     }else if(e.target.textContent === 'MR') {
-                        if(calculator.memorySlot !== ''){
-                            calculator.lowerDisplay.textContent = calculator.memorySlot;
-                        }else{
-                            break;
-                        }
+                        calculator.memoryRecall();
+
+                    // Clear the value from the memory slot
                     }else if(e.target.textContent === 'MC') {
-                        if(calculator.memorySlot !== ''){
-                            calculator.memorySlot = '';
-                        }else{
-                            break;
-                        }
+                        calculator.memoryClear();
                     }
                     break;
                 default:
